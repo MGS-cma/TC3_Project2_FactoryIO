@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="F_FactoryIO_Read_Inputs" Id="{af80393c-eb61-4b06-bd54-a00a692f53f7}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM F_FactoryIO_Read_Inputs
+VAR;
+	LFB_MBReadInputs 	: FB_MBReadInputs;
+	bBusy: BOOL;
+	bError: BOOL;
+END_VAR
+ 
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[LFB_MBReadInputs(
+	sIPAddr := '127.0.0.1',
+	nTCPPort := 505,
+	nUnitID := 255,
+	nQuantity := 16, // Nombre de bits à lire
+	nMBAddr := 0,
+	cbLength := SIZEOF(GAB_FactoryIO_Inputs),
+	pDestAddr := ADR(GAB_FactoryIO_Inputs),
+	bExecute := TRUE,
+	tTimeout := T#1S,
+	bBusy => bBusy,
+	bError => bError,
+	nErrId => ,
+	cbRead => ,
+ );
+LFB_MBReadInputs(bExecute := FALSE);]]></ST>
+    </Implementation>
+    <LineIds Name="F_FactoryIO_Read_Inputs">
+      <LineId Id="46" Count="15" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="F_FactoryIO_Write_Coils" Id="{d4a8b314-3752-4f28-b57a-84f6b4497dd4}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM F_FactoryIO_Write_Coils
+VAR
+	LFB_MBWriteCoils 	: FB_MBWriteCoils;
+	bBusy: BOOL;
+	bError: BOOL;
+
+END_VAR
+ 
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[LFB_MBWriteCoils(
+	sIPAddr := '127.0.0.1',
+	nTCPPort := 505,
+	nUnitID := 255,
+	nQuantity := 16,
+	nMBAddr := 0,
+	cbLength := SIZEOF(GAB_FactoryIO_Outputs),
+	pSrcAddr:= ADR(GAB_FactoryIO_Outputs), 
+	bExecute := TRUE,
+	tTimeout := T#1S,
+	bBusy=> bBusy, 
+	bError=> bError, 
+	nErrId=>
+);
+LFB_MBWriteCoils(bExecute := FALSE);]]></ST>
+    </Implementation>
+    <LineIds Name="F_FactoryIO_Write_Coils">
+      <LineId Id="31" Count="0" />
+      <LineId Id="46" Count="3" />
+      <LineId Id="36" Count="3" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="65" Count="0" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="45" Count="0" />
+      <LineId Id="43" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
