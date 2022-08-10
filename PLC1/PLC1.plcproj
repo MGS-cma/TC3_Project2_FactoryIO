@@ -33,6 +33,12 @@
     <Compile Include="POUs\FactoryIO_MGS\FB_FactoryIO_ModbusTCP.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\FactoryIO_MGS\FB_Word_To_Bool.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\FactoryIO_MGS\FB_Bool_To_Word.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\FactoryIO_WebSample\F_FactoryIO_Read_InputRegs.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -54,6 +60,7 @@
     <Folder Include="GVLs" />
     <Folder Include="POUs\FactoryIO_WebSample" />
     <Folder Include="POUs\FactoryIO_MGS" />
+    <Folder Include="POUs\Basic_MGS" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>

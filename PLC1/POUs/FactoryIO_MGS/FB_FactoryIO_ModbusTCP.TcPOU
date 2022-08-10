@@ -7,61 +7,70 @@ VAR_INPUT
 	nTCPPort : UINT:=505; // 505
 	nUnitID : BYTE:=255; // 255
 	
-//	// Configuration FactoryIO
-//	nNBInput : USINT:=16; //16
-//	nNBInputReg : USINT:=8; //8
-//	nNBOutput : USINT:=16; //16
-//	nNBOutputReg : USINT:=8; //8
+	// **** Configuration des array en fonction de la configuration FactoryIO
+	OutputReg : ARRAY [0..7] OF INT;
+	// Outpus traités
+	bOutput1 : ARRAY [0..15] OF BOOL;
+	bOutput2 : ARRAY [0..15] OF BOOL;
+	
 END_VAR
 
 VAR_OUTPUT
 	bBusy: BOOL;
 	bError: BOOL;
-
-END_VAR
-
-VAR_IN_OUT
+	// *** Configuration des array en fonction de la configuration FactoryIO
+	InputReg : ARRAY [0..7] OF INT; // ex. input register 8 [0..7] pour les mesures analogiques
+	// Inputs traités
+	bInput1 : ARRAY [0..15] OF BOOL;
+	bInput2 : ARRAY [0..15] OF BOOL;
 	
 END_VAR
 	
 VAR
+	// Instances
+	fb_MBReadInputs : FB_MBReadInputs; // Instance de la fonction FB_MBReadInputs de la lib Tc2_ModbusSrv
+	fb_MBReadInputRegs : FB_MBReadInputRegs;
+	fb_MBWriteCoils : FB_MBWriteCoils;
+	fb_MBWriteRegs : FB_MBWriteRegs ;
 	
-	LFB_MBReadInputs 	: FB_MBReadInputs; // Instance de la fonction FB_MBReadInputs de la lib Tc2_ModbusSrv
+	fb_Word_To_Bool : FB_Word_To_Bool; // Instance commune
+	fb_Bool_To_Word: FB_Bool_To_Word ; // Instance commune
+	
+	// *** Configuration des array en fonction de la configuration FactoryIO
+	Input : ARRAY [0..1] OF WORD; // ex. input digital 16 [0..0] /  input digital 32 [0..1]
+	// **** Configuration des array en fonction de la configuration FactoryIO
+	Output : ARRAY [0..1] OF WORD;
+	
+	// Busy Error interne à la fonciton
+	bBusyInput: ARRAY [1..4] OF BOOL;
+	bErrorInput: ARRAY [1..4] OF BOOL;
 
-	// Configuration FactoryIO
-	Input : ARRAY [0..0] OF WORD;
-	bInput : ARRAY [0..16] OF BOOL;
-	
-	
-	InputReg : ARRAY [0..7] OF INT;
-	Outputs : ARRAY [0..1] OF WORD;
-	OutputsRegs : ARRAY [0..7] OF INT;
-	
-	
-	bBusyInput: BOOL;
-	bErrorInput: BOOL;
-
-	i: INT;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-//IF i >= 16 THEN
-//	i := 0;	
-//END_IF
+// Traitement des bool représentant les inputs
+fb_Word_To_Bool(inWord := Input[0],
+				outArrayOfBool => bInput1);
+fb_Word_To_Bool(inWord := Input[1],
+				outArrayOfBool => bInput2);
+				
+// Traitement des bool représentant les outputs
+fb_Bool_To_Word(inArrayOfBool := bOutput1,
+				outWord => Output[0]);
+fb_Bool_To_Word(inArrayOfBool := bOutput2,
+				outWord => Output[1]);	
+				
 
-//bInput[i] := Input[0].i;
-bInput[1] := Input[0].0;
-bInput[1] := Input[0].1;
-
-
-IF bBusyInput THEN
+// Busy si au moins 1 busy
+IF bBusyInput[1] OR bBusyInput[2] OR bBusyInput[3] OR bBusyInput[4] THEN
 	bBusy := 1;
 ELSE
 	bBusy := 0;
 END_IF
 
-IF bErrorInput THEN
+// Error si au moins 1 busy
+IF bErrorInput[1] OR bErrorInput[2] OR bErrorInput[3] OR bErrorInput[4] THEN
 	bError := 1;
 ELSE
 	bError := 0;
@@ -71,11 +80,9 @@ END_IF
     </Implementation>
     <Method Name="Read_Input" Id="{114b7d6d-1641-41a1-9a37-c80540c5b291}">
       <Declaration><![CDATA[METHOD PUBLIC Read_Input
-VAR
-END_VAR]]></Declaration>
+]]></Declaration>
       <Implementation>
-        <ST><![CDATA[
-LFB_MBReadInputs(
+        <ST><![CDATA[fb_MBReadInputs(
 	sIPAddr := sIPAddr,
 	nTCPPort := nTCPPort,
 	nUnitID := nUnitID,
@@ -85,43 +92,127 @@ LFB_MBReadInputs(
 	pDestAddr := ADR(Input),
 	bExecute := TRUE,
 	tTimeout := T#1S,
-	bBusy => bBusyInput,
-	bError => bErrorInput,
+	bBusy => bBusyInput[1],
+	bError => bErrorInput[1],
 	nErrId => ,
 	cbRead => ,
  );
-LFB_MBReadInputs(bExecute := FALSE);
-test := test + 1;
+fb_MBReadInputs(bExecute := FALSE);
+
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Read_InputRegister" Id="{49627f2a-4539-4976-b388-686bcf311a5b}">
+      <Declaration><![CDATA[METHOD PUBLIC Read_InputRegister
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fb_MBReadInputRegs(
+	sIPAddr := sIPAddr,
+	nTCPPort := nTCPPort,
+	nUnitID := nUnitID,
+	nQuantity := SIZEOF(InputReg)/2,
+	nMBAddr := 0,
+	cbLength := SIZEOF(InputReg),
+	pDestAddr := ADR(InputReg),
+	bExecute := TRUE,
+	tTimeout := T#1S,
+	bBusy => bBusyInput[2],
+	bError => bErrorInput[2],
+	nErrId => ,
+	cbRead => ,
+ );
+fb_MBReadInputRegs(bExecute := FALSE);]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Write_Output" Id="{434578e9-d9ba-4b29-902c-1d1c5a578d51}">
+      <Declaration><![CDATA[METHOD PUBLIC Write_Output
+
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fb_MBWriteCoils(
+	sIPAddr := sIPAddr,
+	nTCPPort := nTCPPort,
+	nUnitID := nUnitID,
+	nQuantity := SIZEOF(Output)*8,
+	nMBAddr := 0,
+	cbLength := SIZEOF(Output),
+	pSrcAddr := ADR(Output),
+	bExecute := TRUE,
+	tTimeout := T#1S,
+	bBusy => bBusyInput[3],
+	bError => bErrorInput[3],
+	nErrId => ,
+ );
+fb_MBWriteCoils(bExecute := FALSE);
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Write_OutputRegister" Id="{7e2de503-8972-44d8-bb85-cbb1ce981c07}">
+      <Declaration><![CDATA[METHOD PUBLIC Write_OutputRegister
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fb_MBWriteRegs(
+	sIPAddr := sIPAddr,
+	nTCPPort := nTCPPort,
+	nUnitID := nUnitID,
+	nQuantity := SIZEOF(OutputReg)/2,
+	nMBAddr := 0,
+	cbLength := SIZEOF(OutputReg),
+	pSrcAddr := ADR(InputReg),
+	bExecute := TRUE,
+	tTimeout := T#1S,
+	bBusy => bBusyInput[4],
+	bError => bErrorInput[4],
+	nErrId => ,
+ );
+fb_MBWriteRegs(bExecute := FALSE);
 ]]></ST>
       </Implementation>
     </Method>
     <LineIds Name="FB_FactoryIO_ModbusTCP">
       <LineId Id="102" Count="0" />
-      <LineId Id="106" Count="0" />
-      <LineId Id="112" Count="0" />
+      <LineId Id="123" Count="0" />
       <LineId Id="110" Count="0" />
+      <LineId Id="115" Count="0" />
+      <LineId Id="122" Count="0" />
       <LineId Id="114" Count="0" />
-      <LineId Id="107" Count="0" />
-      <LineId Id="9" Count="0" />
-      <LineId Id="36" Count="0" />
-      <LineId Id="101" Count="0" />
+      <LineId Id="152" Count="1" />
+      <LineId Id="156" Count="0" />
+      <LineId Id="159" Count="1" />
+      <LineId Id="158" Count="0" />
+      <LineId Id="155" Count="0" />
+      <LineId Id="124" Count="0" />
       <LineId Id="78" Count="0" />
       <LineId Id="77" Count="0" />
       <LineId Id="79" Count="0" />
       <LineId Id="81" Count="1" />
       <LineId Id="80" Count="0" />
+      <LineId Id="125" Count="0" />
       <LineId Id="85" Count="4" />
       <LineId Id="84" Count="0" />
       <LineId Id="69" Count="0" />
       <LineId Id="68" Count="0" />
     </LineIds>
     <LineIds Name="FB_FactoryIO_ModbusTCP.Read_Input">
-      <LineId Id="28" Count="0" />
-      <LineId Id="50" Count="0" />
-      <LineId Id="32" Count="13" />
-      <LineId Id="6" Count="0" />
+      <LineId Id="53" Count="15" />
       <LineId Id="48" Count="0" />
       <LineId Id="46" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_FactoryIO_ModbusTCP.Read_InputRegister">
+      <LineId Id="23" Count="14" />
+      <LineId Id="22" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_FactoryIO_ModbusTCP.Write_Output">
+      <LineId Id="6" Count="12" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="21" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_FactoryIO_ModbusTCP.Write_OutputRegister">
+      <LineId Id="6" Count="12" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="21" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

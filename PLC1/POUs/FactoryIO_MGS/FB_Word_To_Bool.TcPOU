@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="FB_Word_To_Bool" Id="{d3d8282c-3aea-460d-99cc-fe2a8ba427ea}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Word_To_Bool
+VAR_INPUT
+	inWord : WORD;
+END_VAR
+VAR_OUTPUT
+	outArrayOfBool : ARRAY [0..15] OF BOOL;
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[outArrayOfBool[0] := inWord.0;
+outArrayOfBool[1] := inWord.1;
+outArrayOfBool[2] := inWord.2;
+outArrayOfBool[3] := inWord.3;
+outArrayOfBool[4] := inWord.4;
+outArrayOfBool[5] := inWord.5;
+outArrayOfBool[6] := inWord.6;
+outArrayOfBool[7] := inWord.7;
+outArrayOfBool[8] := inWord.8;
+outArrayOfBool[9] := inWord.9;
+outArrayOfBool[10] := inWord.10;
+outArrayOfBool[11] := inWord.11;
+outArrayOfBool[12] := inWord.12;
+outArrayOfBool[13] := inWord.13;
+outArrayOfBool[14] := inWord.14;
+outArrayOfBool[15] := inWord.15;]]></ST>
+    </Implementation>
+    <LineIds Name="FB_Word_To_Bool">
+      <LineId Id="13" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="15" Count="13" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -3,7 +3,7 @@
   <POU Name="MAIN" Id="{11a895ac-5a06-4334-87ae-34581a64c27e}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	fb_FactoryIO_ModbusTCP : FB_FactoryIO_ModbusTCP;
+	//fb_FactoryIO_ModbusTCP : FB_FactoryIO_ModbusTCP;
 	
 	test: BOOL;
 
@@ -25,9 +25,9 @@ TON1.IN := NOT TON2.Q;
 TON2.IN := TON1.Q;
 
 IF TON1.Q THEN
-	GAB_FactoryIO_Outputs[0].0 := 1;
+	GVL_FactoryIO.bOutput1[0] := 1;
 ELSE
-	GAB_FactoryIO_Outputs[0].0 := 0;
+	GVL_FactoryIO.bOutput1[0] := 0;
 END_IF
 
 
@@ -38,7 +38,7 @@ END_IF
 //END_IF
 
 
-F_FactoryIO_Write_Coils();
+//F_FactoryIO_Write_Coils();
 //F_FactoryIO_WriteRegs();
 
 FactoryIO_ModbusTCP();
@@ -54,8 +54,10 @@ FactoryIO_ModbusTCP();
       <LineId Id="93" Count="0" />
       <LineId Id="101" Count="0" />
       <LineId Id="99" Count="0" />
-      <LineId Id="79" Count="1" />
-      <LineId Id="82" Count="1" />
+      <LineId Id="79" Count="0" />
+      <LineId Id="111" Count="0" />
+      <LineId Id="82" Count="0" />
+      <LineId Id="112" Count="0" />
       <LineId Id="85" Count="0" />
       <LineId Id="110" Count="0" />
       <LineId Id="109" Count="0" />
