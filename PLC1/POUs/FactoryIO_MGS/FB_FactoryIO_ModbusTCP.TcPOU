@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="FB_FactoryIO_ModbusTCP" Id="{ef99659b-bb0e-494d-8cf7-6072e7c46a5c}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK PUBLIC FB_FactoryIO_ModbusTCP
+VAR_INPUT
+	sIPAddr : STRING[15]:='127.0.0.1'; // '127.0.0.1'
+	nTCPPort : UINT:=505; // 505
+	nUnitID : BYTE:=255; // 255
+	
+//	// Configuration FactoryIO
+//	nNBInput : USINT:=16; //16
+//	nNBInputReg : USINT:=8; //8
+//	nNBOutput : USINT:=16; //16
+//	nNBOutputReg : USINT:=8; //8
+END_VAR
+
+VAR_OUTPUT
+	bBusy: BOOL;
+	bError: BOOL;
+
+END_VAR
+
+VAR_IN_OUT
+	
+END_VAR
+	
+VAR
+	
+	LFB_MBReadInputs 	: FB_MBReadInputs; // Instance de la fonction FB_MBReadInputs de la lib Tc2_ModbusSrv
+
+	// Configuration FactoryIO
+	Input : ARRAY [0..0] OF WORD;
+	bInput : ARRAY [0..16] OF BOOL;
+	
+	
+	InputReg : ARRAY [0..7] OF INT;
+	Outputs : ARRAY [0..1] OF WORD;
+	OutputsRegs : ARRAY [0..7] OF INT;
+	
+	
+	bBusyInput: BOOL;
+	bErrorInput: BOOL;
+
+	i: INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+//IF i >= 16 THEN
+//	i := 0;	
+//END_IF
+
+//bInput[i] := Input[0].i;
+bInput[1] := Input[0].0;
+bInput[1] := Input[0].1;
+
+
+IF bBusyInput THEN
+	bBusy := 1;
+ELSE
+	bBusy := 0;
+END_IF
+
+IF bErrorInput THEN
+	bError := 1;
+ELSE
+	bError := 0;
+END_IF
+
+]]></ST>
+    </Implementation>
+    <Method Name="Read_Input" Id="{114b7d6d-1641-41a1-9a37-c80540c5b291}">
+      <Declaration><![CDATA[METHOD PUBLIC Read_Input
+VAR
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[
+LFB_MBReadInputs(
+	sIPAddr := sIPAddr,
+	nTCPPort := nTCPPort,
+	nUnitID := nUnitID,
+	nQuantity := SIZEOF(Input)*8, // Nombre de bits à lire SIZEOF(nb byte * bits dans 1 byte)
+	nMBAddr := 0,
+	cbLength := SIZEOF(Input),
+	pDestAddr := ADR(Input),
+	bExecute := TRUE,
+	tTimeout := T#1S,
+	bBusy => bBusyInput,
+	bError => bErrorInput,
+	nErrId => ,
+	cbRead => ,
+ );
+LFB_MBReadInputs(bExecute := FALSE);
+test := test + 1;
+]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_FactoryIO_ModbusTCP">
+      <LineId Id="102" Count="0" />
+      <LineId Id="106" Count="0" />
+      <LineId Id="112" Count="0" />
+      <LineId Id="110" Count="0" />
+      <LineId Id="114" Count="0" />
+      <LineId Id="107" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="36" Count="0" />
+      <LineId Id="101" Count="0" />
+      <LineId Id="78" Count="0" />
+      <LineId Id="77" Count="0" />
+      <LineId Id="79" Count="0" />
+      <LineId Id="81" Count="1" />
+      <LineId Id="80" Count="0" />
+      <LineId Id="85" Count="4" />
+      <LineId Id="84" Count="0" />
+      <LineId Id="69" Count="0" />
+      <LineId Id="68" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_FactoryIO_ModbusTCP.Read_Input">
+      <LineId Id="28" Count="0" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="32" Count="13" />
+      <LineId Id="6" Count="0" />
+      <LineId Id="48" Count="0" />
+      <LineId Id="46" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

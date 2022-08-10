@@ -3,25 +3,73 @@
   <POU Name="MAIN" Id="{11a895ac-5a06-4334-87ae-34581a64c27e}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
+	fb_FactoryIO_ModbusTCP : FB_FactoryIO_ModbusTCP;
+	
 	test: BOOL;
 
+	TON1: TON;
+	TON2: TON;
+	
 END_VAR
 
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[F_FactoryIO_Read_Inputs();
-F_FactoryIO_Read_InputRegs();
-F_FactoryIO_Write_Coils();
-F_FactoryIO_WriteRegs();
+      <ST><![CDATA[//F_FactoryIO_Read_Inputs();
+//F_FactoryIO_Read_InputRegs();
 
-test := GAB_FactoryIO_Inputs[0].0;]]></ST>
+
+TON1(IN:= , PT:=T#0.5S , Q=> , ET=> );
+TON2(IN:= , PT:=T#1S , Q=> , ET=> );
+
+TON1.IN := NOT TON2.Q;
+TON2.IN := TON1.Q;
+
+IF TON1.Q THEN
+	GAB_FactoryIO_Outputs[0].0 := 1;
+ELSE
+	GAB_FactoryIO_Outputs[0].0 := 0;
+END_IF
+
+
+//IF FactoryIO_ModbusTCP.fb_FactoryIO_ModbusTCP.Input[0].1 THEN
+//	GAB_FactoryIO_Outputs[0].1 := 1;
+//ELSE
+//	GAB_FactoryIO_Outputs[0].1 := 0;	
+//END_IF
+
+
+F_FactoryIO_Write_Coils();
+//F_FactoryIO_WriteRegs();
+
+FactoryIO_ModbusTCP();
+
+//test := GAB_FactoryIO_Inputs[0].0;]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="14" Count="0" />
-      <LineId Id="12" Count="0" />
-      <LineId Id="10" Count="0" />
+      <LineId Id="24" Count="1" />
+      <LineId Id="72" Count="1" />
+      <LineId Id="75" Count="0" />
+      <LineId Id="92" Count="0" />
+      <LineId Id="97" Count="0" />
+      <LineId Id="93" Count="0" />
+      <LineId Id="101" Count="0" />
+      <LineId Id="99" Count="0" />
+      <LineId Id="79" Count="1" />
+      <LineId Id="82" Count="1" />
+      <LineId Id="85" Count="0" />
+      <LineId Id="110" Count="0" />
+      <LineId Id="109" Count="0" />
+      <LineId Id="102" Count="0" />
+      <LineId Id="104" Count="0" />
+      <LineId Id="106" Count="1" />
+      <LineId Id="105" Count="0" />
+      <LineId Id="78" Count="0" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="26" Count="0" />
       <LineId Id="15" Count="0" />
-      <LineId Id="22" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="36" Count="0" />
       <LineId Id="21" Count="0" />
     </LineIds>
   </POU>
