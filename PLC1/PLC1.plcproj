@@ -26,13 +26,10 @@
     <Compile Include="POUs\ClassDiagram.TcCD">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FactoryIO_MGS\Basic\FB_Bool_To_Word.TcPOU">
+    <Compile Include="POUs\FactoryIO_MGS\BasicDep\FB_Bool_To_Word.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FactoryIO_MGS\Basic\FB_Word_To_Bool.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\FactoryIO_MGS\FactoryIO_ModbusTCP.TcPOU">
+    <Compile Include="POUs\FactoryIO_MGS\BasicDep\FB_Word_To_Bool.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\FactoryIO_MGS\FB_FactoryIO_ModbusTCP.TcPOU">
@@ -41,6 +38,15 @@
     <Compile Include="POUs\FactoryIO_MGS\GVL_FactoryIO.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="POUs\FactoryIO_MGS\Old\PRG_FactoryIO_ModbusTCP_old.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\FactoryIO_MGS\PRG_FactoryIO_ModbusTCP_Read.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\FactoryIO_MGS\PRG_FactoryIO_ModbusTCP_Write.TcPOU">
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\FactoryIO_WebSample\F_FactoryIO_Read_InputRegs.TcPOU">
       <SubType>Code</SubType>
@@ -58,14 +64,15 @@
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
-    <Compile Include="POUs\MAIN.TcPOU">
+    <Compile Include="POUs\PRG_MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
-    <Folder Include="POUs\FactoryIO_MGS\Basic" />
+    <Folder Include="POUs\FactoryIO_MGS\BasicDep" />
+    <Folder Include="POUs\FactoryIO_MGS\Old" />
     <Folder Include="POUs\FactoryIO_WebSample" />
     <Folder Include="POUs\FactoryIO_MGS" />
     <Folder Include="POUs\Basic_MGS" />

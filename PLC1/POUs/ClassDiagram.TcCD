@@ -31,7 +31,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"FB_MBReadInputs"</v>
                   <v n="AttributeParent">{af80393c-eb61-4b06-bd54-a00a692f53f7}</v>
-                  <v n="AttributeObjectGuid">{ae3c5afb-2198-4ab1-a861-9505e6a799e8}</v>
+                  <v n="AttributeObjectGuid">{e92f7a4d-b10e-4e61-a6fe-16b421181739}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -45,7 +45,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"BOOL"</v>
                   <v n="AttributeParent">{af80393c-eb61-4b06-bd54-a00a692f53f7}</v>
-                  <v n="AttributeObjectGuid">{ee6263b3-c164-4f02-9429-455bfbc05572}</v>
+                  <v n="AttributeObjectGuid">{d0529593-7014-4ed1-aa7c-30c624083f19}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -59,7 +59,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"BOOL"</v>
                   <v n="AttributeParent">{af80393c-eb61-4b06-bd54-a00a692f53f7}</v>
-                  <v n="AttributeObjectGuid">{7d49cd80-a0dc-4683-8846-297f8c52c905}</v>
+                  <v n="AttributeObjectGuid">{ff928c9b-1f93-4d02-91d5-6b70639fa307}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
               </l>
@@ -117,7 +117,7 @@
             </o>
             <v>11a895ac-5a06-4334-87ae-34581a64c27e</v>
             <o>
-              <v n="DocumenationName">"MAIN"</v>
+              <v n="DocumenationName">"PRG_MAIN"</v>
               <n n="AttributeTrigger" />
               <v n="ExcludedFromBuild">false</v>
               <v n="PropertiesLoaded">false</v>
@@ -132,9 +132,9 @@
                   <v n="bIsMethod">false</v>
                   <v n="AttribtueName">"fb_Blinking"</v>
                   <v n="AttributeConstraint">""</v>
-                  <v n="AttributeReturnType">"FB_Blinking"</v>
+                  <v n="AttributeReturnType">"ARRAY [0..1] OF FB_Blinking"</v>
                   <v n="AttributeParent">{11a895ac-5a06-4334-87ae-34581a64c27e}</v>
-                  <v n="AttributeObjectGuid">{2bfc146b-f9f3-42fa-872b-732977f4d253}</v>
+                  <v n="AttributeObjectGuid">{21259b28-62dd-48d2-a55c-622f83bae4ee}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
               </l>
@@ -155,7 +155,7 @@
                 <v n="IsElementVisible">true</v>
                 <v n="TopPosition">42</v>
                 <v n="LeftPosition">10</v>
-                <v n="WidthValue">184</v>
+                <v n="WidthValue">291</v>
                 <v n="MinWidthValue">0</v>
                 <v n="Height">84</v>
                 <v n="MinHeight">0</v>
@@ -209,7 +209,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"FB_MBWriteCoils"</v>
                   <v n="AttributeParent">{d4a8b314-3752-4f28-b57a-84f6b4497dd4}</v>
-                  <v n="AttributeObjectGuid">{1b15c732-2c0b-4b0d-8177-676c57096abc}</v>
+                  <v n="AttributeObjectGuid">{25e8b7ef-f91e-49d3-900a-9872163e3897}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -223,7 +223,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"BOOL"</v>
                   <v n="AttributeParent">{d4a8b314-3752-4f28-b57a-84f6b4497dd4}</v>
-                  <v n="AttributeObjectGuid">{2cbc9dee-166d-465b-b0e9-5c4d7f8ec344}</v>
+                  <v n="AttributeObjectGuid">{aebb08cf-e113-4a6d-a20b-3885d4614635}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -237,7 +237,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"BOOL"</v>
                   <v n="AttributeParent">{d4a8b314-3752-4f28-b57a-84f6b4497dd4}</v>
-                  <v n="AttributeObjectGuid">{e1656284-3c3c-47c9-8d5e-d2a7aae5ba21}</v>
+                  <v n="AttributeObjectGuid">{c3cf2ced-66ce-4e95-b465-e0a00efc6ba8}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
               </l>
@@ -312,7 +312,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"FB_MBReadInputRegs"</v>
                   <v n="AttributeParent">{316264d6-447a-47b0-92be-e80d12f427b3}</v>
-                  <v n="AttributeObjectGuid">{3f292dca-476e-4d72-aaee-4e1166676852}</v>
+                  <v n="AttributeObjectGuid">{c83f1745-17b9-411c-b4be-d139273d4965}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -326,7 +326,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"BOOL"</v>
                   <v n="AttributeParent">{316264d6-447a-47b0-92be-e80d12f427b3}</v>
-                  <v n="AttributeObjectGuid">{1daf4c13-c28b-4140-82e4-710fccba8c12}</v>
+                  <v n="AttributeObjectGuid">{19ff3e72-3b9a-46e3-bd18-5fbf3c953fbc}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -340,7 +340,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"BOOL"</v>
                   <v n="AttributeParent">{316264d6-447a-47b0-92be-e80d12f427b3}</v>
-                  <v n="AttributeObjectGuid">{ae009735-a295-4e2c-9314-704648e5d914}</v>
+                  <v n="AttributeObjectGuid">{34380024-07b3-4b50-95ab-d9526c5855fe}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
               </l>
@@ -415,7 +415,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"FB_MBReadInputs"</v>
                   <v n="AttributeParent">{ef99659b-bb0e-494d-8cf7-6072e7c46a5c}</v>
-                  <v n="AttributeObjectGuid">{49993d67-b0bd-46c8-8a5c-42bbbf57dc40}</v>
+                  <v n="AttributeObjectGuid">{f05247ee-cfc4-4952-9913-a45836ff2a05}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -429,7 +429,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"FB_MBReadInputRegs"</v>
                   <v n="AttributeParent">{ef99659b-bb0e-494d-8cf7-6072e7c46a5c}</v>
-                  <v n="AttributeObjectGuid">{b2489965-7a3e-401a-868d-13b99b404354}</v>
+                  <v n="AttributeObjectGuid">{a6202b75-044d-4d67-a344-41ba174df518}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -443,7 +443,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"FB_MBWriteCoils"</v>
                   <v n="AttributeParent">{ef99659b-bb0e-494d-8cf7-6072e7c46a5c}</v>
-                  <v n="AttributeObjectGuid">{e137c283-8a68-4d47-b654-8053bf2e026b}</v>
+                  <v n="AttributeObjectGuid">{9f80dcfb-f42c-4bd3-938f-e6cd4585ad71}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -457,7 +457,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"FB_MBWriteRegs"</v>
                   <v n="AttributeParent">{ef99659b-bb0e-494d-8cf7-6072e7c46a5c}</v>
-                  <v n="AttributeObjectGuid">{27cca213-530a-4417-a032-9237fcf087d1}</v>
+                  <v n="AttributeObjectGuid">{22a9abe9-dab5-4960-a453-8d7d43131009}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -471,7 +471,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"FB_Word_To_Bool"</v>
                   <v n="AttributeParent">{ef99659b-bb0e-494d-8cf7-6072e7c46a5c}</v>
-                  <v n="AttributeObjectGuid">{70119a2e-ccb1-4bc2-add4-735023ad20e7}</v>
+                  <v n="AttributeObjectGuid">{dce8d02b-1d19-40d6-87e3-6fdac32426cc}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -485,7 +485,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"FB_Bool_To_Word"</v>
                   <v n="AttributeParent">{ef99659b-bb0e-494d-8cf7-6072e7c46a5c}</v>
-                  <v n="AttributeObjectGuid">{f20d070b-dc1e-4665-8465-b6d2b88a6c57}</v>
+                  <v n="AttributeObjectGuid">{c34df817-3e86-4e7d-83c3-014dd3611735}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -499,7 +499,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"ARRAY [0..1] OF WORD"</v>
                   <v n="AttributeParent">{ef99659b-bb0e-494d-8cf7-6072e7c46a5c}</v>
-                  <v n="AttributeObjectGuid">{d1715e6b-79ac-4d3c-a39f-0b4f0fee2873}</v>
+                  <v n="AttributeObjectGuid">{d4fb91be-bffd-40e2-b001-82d3192545b8}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -513,7 +513,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"ARRAY [0..1] OF WORD"</v>
                   <v n="AttributeParent">{ef99659b-bb0e-494d-8cf7-6072e7c46a5c}</v>
-                  <v n="AttributeObjectGuid">{926374ae-725e-4077-82dd-4912eb6c9b51}</v>
+                  <v n="AttributeObjectGuid">{5650ec58-3c80-452d-8a3f-c9b42c9979e6}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -527,7 +527,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"ARRAY [1..4] OF BOOL"</v>
                   <v n="AttributeParent">{ef99659b-bb0e-494d-8cf7-6072e7c46a5c}</v>
-                  <v n="AttributeObjectGuid">{948b3573-6316-4c10-9da9-05f139e0b542}</v>
+                  <v n="AttributeObjectGuid">{43f7807a-4b44-4da0-a580-a010b76b2535}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -541,7 +541,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"ARRAY [1..4] OF BOOL"</v>
                   <v n="AttributeParent">{ef99659b-bb0e-494d-8cf7-6072e7c46a5c}</v>
-                  <v n="AttributeObjectGuid">{32364746-6479-4a66-ab5f-34d4fe96e9de}</v>
+                  <v n="AttributeObjectGuid">{1306a4c0-ea66-4a80-8cfd-0f2c5e6d0506}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -555,7 +555,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"STRING(15)"</v>
                   <v n="AttributeParent">{ef99659b-bb0e-494d-8cf7-6072e7c46a5c}</v>
-                  <v n="AttributeObjectGuid">{69f01fd5-7365-4292-89e9-1ee6518b5139}</v>
+                  <v n="AttributeObjectGuid">{18170d89-35f2-40e0-90ab-e6c93a44c43b}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -569,7 +569,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"UINT"</v>
                   <v n="AttributeParent">{ef99659b-bb0e-494d-8cf7-6072e7c46a5c}</v>
-                  <v n="AttributeObjectGuid">{d72cb72a-6eb9-49ac-bb51-c6164ca1ef56}</v>
+                  <v n="AttributeObjectGuid">{54284f38-0cd0-4d73-9bd0-6aec8cb0bba6}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -583,7 +583,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"BYTE"</v>
                   <v n="AttributeParent">{ef99659b-bb0e-494d-8cf7-6072e7c46a5c}</v>
-                  <v n="AttributeObjectGuid">{b7772ba7-26cc-48aa-bd43-e3f05559a8aa}</v>
+                  <v n="AttributeObjectGuid">{17232da5-7780-434f-bd52-0eceab4d43f9}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -597,7 +597,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"ARRAY [0..7] OF INT"</v>
                   <v n="AttributeParent">{ef99659b-bb0e-494d-8cf7-6072e7c46a5c}</v>
-                  <v n="AttributeObjectGuid">{4d103768-de0b-4be4-90c4-d011d1604c4c}</v>
+                  <v n="AttributeObjectGuid">{c4b7e723-994c-4264-8c62-e76e5332e831}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -611,7 +611,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"ARRAY [0..15] OF BOOL"</v>
                   <v n="AttributeParent">{ef99659b-bb0e-494d-8cf7-6072e7c46a5c}</v>
-                  <v n="AttributeObjectGuid">{db5511d0-5869-4cb3-8bee-11f56293aa2b}</v>
+                  <v n="AttributeObjectGuid">{f636afbe-0fe9-4305-9e2e-0c15f5192f42}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -625,7 +625,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"ARRAY [0..15] OF BOOL"</v>
                   <v n="AttributeParent">{ef99659b-bb0e-494d-8cf7-6072e7c46a5c}</v>
-                  <v n="AttributeObjectGuid">{6c7ea91e-2b1e-4d4f-bad4-06857e601bcf}</v>
+                  <v n="AttributeObjectGuid">{1a0ca2a4-0882-49ae-a92c-c8949b65776a}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -639,7 +639,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"BOOL"</v>
                   <v n="AttributeParent">{ef99659b-bb0e-494d-8cf7-6072e7c46a5c}</v>
-                  <v n="AttributeObjectGuid">{80e529d1-bcb8-4649-98bd-6681275c1a9b}</v>
+                  <v n="AttributeObjectGuid">{05d2af75-59f8-45d6-a757-5bba25eabd72}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -653,7 +653,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"BOOL"</v>
                   <v n="AttributeParent">{ef99659b-bb0e-494d-8cf7-6072e7c46a5c}</v>
-                  <v n="AttributeObjectGuid">{af7b1a1b-e954-4ff1-a62e-4184952ba7c1}</v>
+                  <v n="AttributeObjectGuid">{0232151a-1b53-462d-96c8-0b1b1eb76cc1}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -667,7 +667,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"ARRAY [0..7] OF INT"</v>
                   <v n="AttributeParent">{ef99659b-bb0e-494d-8cf7-6072e7c46a5c}</v>
-                  <v n="AttributeObjectGuid">{2bc816e5-a74b-4225-a72b-bdbc01f2f228}</v>
+                  <v n="AttributeObjectGuid">{118cc804-6a67-4491-8feb-bf02ec6386c3}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -681,7 +681,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"ARRAY [0..15] OF BOOL"</v>
                   <v n="AttributeParent">{ef99659b-bb0e-494d-8cf7-6072e7c46a5c}</v>
-                  <v n="AttributeObjectGuid">{cea98629-56e0-4d4d-8191-c6827c1abbfd}</v>
+                  <v n="AttributeObjectGuid">{80d349cd-62d9-4ab0-bda3-011d7d6bc897}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -695,7 +695,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"ARRAY [0..15] OF BOOL"</v>
                   <v n="AttributeParent">{ef99659b-bb0e-494d-8cf7-6072e7c46a5c}</v>
-                  <v n="AttributeObjectGuid">{0da8f02a-83df-4425-88bc-277b0cbf7078}</v>
+                  <v n="AttributeObjectGuid">{73120aa3-1e8a-4806-b92b-fdf65b5405ab}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
               </l>
@@ -819,7 +819,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"ARRAY [0..15] OF BOOL"</v>
                   <v n="AttributeParent">{a4883462-1cb0-43b2-bb87-d6ce56b75e06}</v>
-                  <v n="AttributeObjectGuid">{929e7730-9e6f-4018-8446-68fac6a34f9d}</v>
+                  <v n="AttributeObjectGuid">{9dc8f65f-229b-41d2-b47b-4b3f2f1873f1}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -833,7 +833,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"ARRAY [0..15] OF BOOL"</v>
                   <v n="AttributeParent">{a4883462-1cb0-43b2-bb87-d6ce56b75e06}</v>
-                  <v n="AttributeObjectGuid">{6559159b-9fe0-4c91-ae4c-0d36a8595de0}</v>
+                  <v n="AttributeObjectGuid">{3ade3888-cbfe-4e46-a805-cb301a4da38e}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -847,7 +847,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"ARRAY [0..7] OF INT"</v>
                   <v n="AttributeParent">{a4883462-1cb0-43b2-bb87-d6ce56b75e06}</v>
-                  <v n="AttributeObjectGuid">{6e50e2bc-01e8-4198-b517-06c7d07cd8cb}</v>
+                  <v n="AttributeObjectGuid">{2c914a7b-b0bc-457f-a7b3-5389b2f16632}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -861,7 +861,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"ARRAY [0..15] OF BOOL"</v>
                   <v n="AttributeParent">{a4883462-1cb0-43b2-bb87-d6ce56b75e06}</v>
-                  <v n="AttributeObjectGuid">{1a1e7f38-7419-4302-8c50-5448ae944116}</v>
+                  <v n="AttributeObjectGuid">{059153f0-7546-4dbb-8ca5-5540d710f0c2}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -875,7 +875,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"ARRAY [0..15] OF BOOL"</v>
                   <v n="AttributeParent">{a4883462-1cb0-43b2-bb87-d6ce56b75e06}</v>
-                  <v n="AttributeObjectGuid">{7ec93efb-52c1-4adb-9889-9723627d8259}</v>
+                  <v n="AttributeObjectGuid">{0031589c-b840-4749-87d5-cbb0b166a492}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -889,7 +889,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"ARRAY [0..7] OF INT"</v>
                   <v n="AttributeParent">{a4883462-1cb0-43b2-bb87-d6ce56b75e06}</v>
-                  <v n="AttributeObjectGuid">{c9b21aef-7269-456c-a56a-bd82693dea14}</v>
+                  <v n="AttributeObjectGuid">{43eac5a5-f484-457f-ba8f-62779d591f62}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -903,7 +903,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"INT"</v>
                   <v n="AttributeParent">{a4883462-1cb0-43b2-bb87-d6ce56b75e06}</v>
-                  <v n="AttributeObjectGuid">{a39d70c8-c1d8-46a7-bf15-c3ba4c62c466}</v>
+                  <v n="AttributeObjectGuid">{7727addc-438b-4507-b9f1-8ee37897cb9e}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -917,7 +917,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"INT"</v>
                   <v n="AttributeParent">{a4883462-1cb0-43b2-bb87-d6ce56b75e06}</v>
-                  <v n="AttributeObjectGuid">{b24c15b0-3071-4305-90de-b59a364cc146}</v>
+                  <v n="AttributeObjectGuid">{76878f99-2d8c-41bd-8feb-cfd4b784a38a}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
               </l>
@@ -975,7 +975,7 @@
             </o>
             <v>e3a0b526-1f07-43ca-9585-e7d3202c3fc5</v>
             <o>
-              <v n="DocumenationName">"FactoryIO_ModbusTCP"</v>
+              <v n="DocumenationName">"PRG_FactoryIO_ModbusTCP_Read"</v>
               <n n="AttributeTrigger" />
               <v n="ExcludedFromBuild">false</v>
               <v n="PropertiesLoaded">false</v>
@@ -992,7 +992,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"FB_FactoryIO_ModbusTCP"</v>
                   <v n="AttributeParent">{e3a0b526-1f07-43ca-9585-e7d3202c3fc5}</v>
-                  <v n="AttributeObjectGuid">{0f548637-33de-41d4-ab1c-b742212db635}</v>
+                  <v n="AttributeObjectGuid">{c3bb744e-3b6e-44bc-bcc6-90cc48fa62bb}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
               </l>
@@ -1067,7 +1067,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"TON"</v>
                   <v n="AttributeParent">{3f88fc31-be12-435b-862e-b7a83eff5280}</v>
-                  <v n="AttributeObjectGuid">{405d97ae-0c04-4adc-86dc-77af3c73467a}</v>
+                  <v n="AttributeObjectGuid">{2a6f84fa-0d4e-458a-9434-bcdbd342ea7e}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -1081,7 +1081,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"TON"</v>
                   <v n="AttributeParent">{3f88fc31-be12-435b-862e-b7a83eff5280}</v>
-                  <v n="AttributeObjectGuid">{b1b648cf-e7e2-45d9-8f4d-f039ef182afb}</v>
+                  <v n="AttributeObjectGuid">{754da5af-e0f7-4ae1-8b59-f12b8ebb7efd}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -1095,7 +1095,35 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"BOOL"</v>
                   <v n="AttributeParent">{3f88fc31-be12-435b-862e-b7a83eff5280}</v>
-                  <v n="AttributeObjectGuid">{9c558f62-1c3d-4b97-a357-af5ca8000a56}</v>
+                  <v n="AttributeObjectGuid">{ec7a9ca1-9cc7-4168-9b06-4fcba7fdd5d3}</v>
+                  <v n="AttributeStereotype">""</v>
+                </o>
+                <o>
+                  <v n="bIsAttribute">true</v>
+                  <v n="isInputVar">true</v>
+                  <v n="isOutputVar">false</v>
+                  <v n="isInoutVar">false</v>
+                  <v n="isLocalVar">false</v>
+                  <v n="bIsMethod">false</v>
+                  <v n="AttribtueName">"PT_OFF"</v>
+                  <v n="AttributeConstraint">""</v>
+                  <v n="AttributeReturnType">"TIME"</v>
+                  <v n="AttributeParent">{3f88fc31-be12-435b-862e-b7a83eff5280}</v>
+                  <v n="AttributeObjectGuid">{90e09d37-800a-47e7-91b3-9fee8bc69d33}</v>
+                  <v n="AttributeStereotype">""</v>
+                </o>
+                <o>
+                  <v n="bIsAttribute">true</v>
+                  <v n="isInputVar">true</v>
+                  <v n="isOutputVar">false</v>
+                  <v n="isInoutVar">false</v>
+                  <v n="isLocalVar">false</v>
+                  <v n="bIsMethod">false</v>
+                  <v n="AttribtueName">"PT_ON"</v>
+                  <v n="AttributeConstraint">""</v>
+                  <v n="AttributeReturnType">"TIME"</v>
+                  <v n="AttributeParent">{3f88fc31-be12-435b-862e-b7a83eff5280}</v>
+                  <v n="AttributeObjectGuid">{37be3381-0b77-4159-bfb8-509ec9fcdfe5}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -1109,7 +1137,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"BOOL"</v>
                   <v n="AttributeParent">{3f88fc31-be12-435b-862e-b7a83eff5280}</v>
-                  <v n="AttributeObjectGuid">{ca11d517-d780-495f-9576-8992b5d09ce2}</v>
+                  <v n="AttributeObjectGuid">{2f08975d-1953-4145-a7a3-b8fac2eca26d}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
               </l>
@@ -1132,7 +1160,7 @@
                 <v n="LeftPosition">10</v>
                 <v n="WidthValue">204</v>
                 <v n="MinWidthValue">0</v>
-                <v n="Height">124</v>
+                <v n="Height">164</v>
                 <v n="MinHeight">0</v>
                 <v n="AutomaticLayout">true</v>
                 <d n="DockingPoints" t="Hashtable" />
@@ -1184,7 +1212,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"FB_MBWriteRegs"</v>
                   <v n="AttributeParent">{7b35c821-98cd-42f3-9186-98d8239ea522}</v>
-                  <v n="AttributeObjectGuid">{229cbe72-6e46-4eda-9743-471495449ad0}</v>
+                  <v n="AttributeObjectGuid">{4ee5b8cc-0ffb-49ce-b6f3-db49ab2e5cd1}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -1198,7 +1226,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"BOOL"</v>
                   <v n="AttributeParent">{7b35c821-98cd-42f3-9186-98d8239ea522}</v>
-                  <v n="AttributeObjectGuid">{99e88cc2-532b-4c5d-92ea-f3dc0541c033}</v>
+                  <v n="AttributeObjectGuid">{ae8d9ed9-1aa5-4f8e-a94f-ac464eb4fed3}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -1212,7 +1240,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"BOOL"</v>
                   <v n="AttributeParent">{7b35c821-98cd-42f3-9186-98d8239ea522}</v>
-                  <v n="AttributeObjectGuid">{784f7ce1-de2e-4e9c-bd3e-c0283a964114}</v>
+                  <v n="AttributeObjectGuid">{663d5353-051e-4e22-b22c-437f1ffd2837}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
               </l>
@@ -1272,12 +1300,12 @@
           <v n="FirstPaint">true</v>
           <v n="NextElementID">10</v>
           <d n="UMLRelationObjects" t="Hashtable" ckt="Guid" cvt="UMLRelation">
-            <v>8974f5de-49bc-4409-bd0a-7d509d236c3e</v>
+            <v>12c010ab-42e4-4be1-9944-e16508023996</v>
             <o>
               <v n="HasGraphicalRepresentation">true</v>
               <v n="StartUMLElement">{11a895ac-5a06-4334-87ae-34581a64c27e}</v>
               <v n="HighlightedLine">false</v>
-              <v n="ZOrder">21U</v>
+              <v n="ZOrder">0U</v>
               <v n="SpecialHandling">false</v>
               <v n="ActionLocalVariableName">""</v>
               <v n="ActionParametersString">""</v>
@@ -1288,11 +1316,11 @@
               <v n="ActionTextLength">100</v>
               <v n="ConditionText">"TRUE"</v>
               <v n="LengthConditionText">100</v>
-              <v n="RelationID">37</v>
+              <v n="RelationID">45</v>
               <v n="TriggerlessStatechartTransition">true</v>
               <v n="EndUMLElement">{3f88fc31-be12-435b-862e-b7a83eff5280}</v>
               <o n="UMLRelationVisualisation" t="UMLRelationVisualisation">
-                <v n="RelationID">{8974f5de-49bc-4409-bd0a-7d509d236c3e}</v>
+                <v n="RelationID">{12c010ab-42e4-4be1-9944-e16508023996}</v>
                 <v n="FlagPosition" t="Double">0.5</v>
                 <d n="flagsX" t="Hashtable" ckt="String" cvt="Int32">
                   <v>EndElement</v>
@@ -1306,7 +1334,7 @@
                   <v n="AnchorID">0</v>
                   <v n="AnchorLeftPosition">15</v>
                   <v n="AnchorTopPosition">121</v>
-                  <v n="AnchorRelationID">{8974f5de-49bc-4409-bd0a-7d509d236c3e}</v>
+                  <v n="AnchorRelationID">{12c010ab-42e4-4be1-9944-e16508023996}</v>
                   <v n="StartAnchor">true</v>
                   <v n="EndAnchor">false</v>
                   <v n="AnchorDockedState" t="Docked">Bottom</v>
@@ -1315,7 +1343,7 @@
                   <v n="AnchorID">1</v>
                   <v n="AnchorLeftPosition">15</v>
                   <v n="AnchorTopPosition">215</v>
-                  <v n="AnchorRelationID">{8974f5de-49bc-4409-bd0a-7d509d236c3e}</v>
+                  <v n="AnchorRelationID">{12c010ab-42e4-4be1-9944-e16508023996}</v>
                   <v n="StartAnchor">false</v>
                   <v n="EndAnchor">true</v>
                   <v n="AnchorDockedState" t="Docked">Top</v>
@@ -1325,8 +1353,8 @@
                 <v n="RelationIsLinear">true</v>
                 <v n="RelationIsFreeHand">false</v>
               </o>
-              <v n="ReferenceGuid">{8974f5de-49bc-4409-bd0a-7d509d236c3e}</v>
-              <v n="RelationGuid">{8974f5de-49bc-4409-bd0a-7d509d236c3e}</v>
+              <v n="ReferenceGuid">{12c010ab-42e4-4be1-9944-e16508023996}</v>
+              <v n="RelationGuid">{12c010ab-42e4-4be1-9944-e16508023996}</v>
               <v n="RelationName">""</v>
               <n n="RelationStereotypes" />
               <v n="RelationType" t="RelationTypes">Composition</v>
@@ -1336,7 +1364,7 @@
               <v n="GeneratesCode">true</v>
               <v n="StartElementShowArrow">true</v>
               <v n="StartElementCardnality">""</v>
-              <v n="EndElementCardnality">"1"</v>
+              <v n="EndElementCardnality">"0..1"</v>
               <v n="EndElementArrowFlag" t="ArrowTypes">Slim</v>
               <v n="EndElementShowArrow">true</v>
               <v n="StartElementRoleName">""</v>
@@ -1350,12 +1378,12 @@
               <v n="IsModified">false</v>
               <v n="ARGBElementColor">0</v>
             </o>
-            <v>3fa29a6f-ed81-44ea-bbdb-73bdf9c1bc97</v>
+            <v>c0ee1a80-43e9-42c2-b5e8-cdb653d6ef25</v>
             <o>
               <v n="HasGraphicalRepresentation">true</v>
               <v n="StartUMLElement">{e3a0b526-1f07-43ca-9585-e7d3202c3fc5}</v>
               <v n="HighlightedLine">false</v>
-              <v n="ZOrder">25U</v>
+              <v n="ZOrder">0U</v>
               <v n="SpecialHandling">false</v>
               <v n="ActionLocalVariableName">""</v>
               <v n="ActionParametersString">""</v>
@@ -1366,11 +1394,11 @@
               <v n="ActionTextLength">100</v>
               <v n="ConditionText">"TRUE"</v>
               <v n="LengthConditionText">100</v>
-              <v n="RelationID">38</v>
+              <v n="RelationID">46</v>
               <v n="TriggerlessStatechartTransition">true</v>
               <v n="EndUMLElement">{ef99659b-bb0e-494d-8cf7-6072e7c46a5c}</v>
               <o n="UMLRelationVisualisation" t="UMLRelationVisualisation">
-                <v n="RelationID">{3fa29a6f-ed81-44ea-bbdb-73bdf9c1bc97}</v>
+                <v n="RelationID">{c0ee1a80-43e9-42c2-b5e8-cdb653d6ef25}</v>
                 <v n="FlagPosition" t="Double">0.5</v>
                 <d n="flagsX" t="Hashtable" ckt="String" cvt="Int32">
                   <v>EndElement</v>
@@ -1384,7 +1412,7 @@
                   <v n="AnchorID">0</v>
                   <v n="AnchorLeftPosition">545</v>
                   <v n="AnchorTopPosition">129</v>
-                  <v n="AnchorRelationID">{3fa29a6f-ed81-44ea-bbdb-73bdf9c1bc97}</v>
+                  <v n="AnchorRelationID">{c0ee1a80-43e9-42c2-b5e8-cdb653d6ef25}</v>
                   <v n="StartAnchor">true</v>
                   <v n="EndAnchor">false</v>
                   <v n="AnchorDockedState" t="Docked">Bottom</v>
@@ -1393,7 +1421,7 @@
                   <v n="AnchorID">3</v>
                   <v n="AnchorLeftPosition">535</v>
                   <v n="AnchorTopPosition">205</v>
-                  <v n="AnchorRelationID">{3fa29a6f-ed81-44ea-bbdb-73bdf9c1bc97}</v>
+                  <v n="AnchorRelationID">{c0ee1a80-43e9-42c2-b5e8-cdb653d6ef25}</v>
                   <v n="StartAnchor">false</v>
                   <v n="EndAnchor">true</v>
                   <v n="AnchorDockedState" t="Docked">Top</v>
@@ -1405,7 +1433,7 @@
                     <v n="AnchorID">2</v>
                     <v n="AnchorLeftPosition">535</v>
                     <v n="AnchorTopPosition">167</v>
-                    <v n="AnchorRelationID">{3fa29a6f-ed81-44ea-bbdb-73bdf9c1bc97}</v>
+                    <v n="AnchorRelationID">{c0ee1a80-43e9-42c2-b5e8-cdb653d6ef25}</v>
                     <v n="StartAnchor">false</v>
                     <v n="EndAnchor">false</v>
                     <v n="AnchorDockedState" t="Docked">NotDocked</v>
@@ -1415,7 +1443,7 @@
                     <v n="AnchorID">1</v>
                     <v n="AnchorLeftPosition">545</v>
                     <v n="AnchorTopPosition">167</v>
-                    <v n="AnchorRelationID">{3fa29a6f-ed81-44ea-bbdb-73bdf9c1bc97}</v>
+                    <v n="AnchorRelationID">{c0ee1a80-43e9-42c2-b5e8-cdb653d6ef25}</v>
                     <v n="StartAnchor">false</v>
                     <v n="EndAnchor">false</v>
                     <v n="AnchorDockedState" t="Docked">NotDocked</v>
@@ -1424,8 +1452,8 @@
                 <v n="RelationIsLinear">true</v>
                 <v n="RelationIsFreeHand">false</v>
               </o>
-              <v n="ReferenceGuid">{3fa29a6f-ed81-44ea-bbdb-73bdf9c1bc97}</v>
-              <v n="RelationGuid">{3fa29a6f-ed81-44ea-bbdb-73bdf9c1bc97}</v>
+              <v n="ReferenceGuid">{c0ee1a80-43e9-42c2-b5e8-cdb653d6ef25}</v>
+              <v n="RelationGuid">{c0ee1a80-43e9-42c2-b5e8-cdb653d6ef25}</v>
               <v n="RelationName">""</v>
               <n n="RelationStereotypes" />
               <v n="RelationType" t="RelationTypes">Composition</v>
@@ -1470,7 +1498,7 @@
           </o>
           <v n="IsFastStateDiagram">false</v>
           <l n="StereoTypeProfile" t="ArrayList" />
-          <v n="RelationRoleID">38</v>
+          <v n="RelationRoleID">46</v>
           <d n="PositionSerialization" t="Hashtable" ckt="Int64" cvt="Guid">
             <v>2</v>
             <v>883b5354-df77-499e-ae74-8b34c11ca28f</v>

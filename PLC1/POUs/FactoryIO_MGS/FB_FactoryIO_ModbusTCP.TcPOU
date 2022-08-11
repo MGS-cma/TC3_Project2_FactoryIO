@@ -3,6 +3,7 @@
   <POU Name="FB_FactoryIO_ModbusTCP" Id="{ef99659b-bb0e-494d-8cf7-6072e7c46a5c}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK PUBLIC FB_FactoryIO_ModbusTCP
 VAR_INPUT
+	// **** Configuration en fonction de la configuration FactoryIO
 	sIPAddr : STRING[15]:='127.0.0.1'; // '127.0.0.1'
 	nTCPPort : UINT:=505; // 505
 	nUnitID : BYTE:=255; // 255
@@ -48,8 +49,7 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[
-// Traitement des bool représentant les inputs
+      <ST><![CDATA[// Traitement des bool représentant les inputs
 fb_Word_To_Bool(inWord := Input[0],
 				outArrayOfBool => bInput1);
 fb_Word_To_Bool(inWord := Input[1],
@@ -170,7 +170,6 @@ fb_MBWriteRegs(bExecute := FALSE);
       </Implementation>
     </Method>
     <LineIds Name="FB_FactoryIO_ModbusTCP">
-      <LineId Id="102" Count="0" />
       <LineId Id="123" Count="0" />
       <LineId Id="110" Count="0" />
       <LineId Id="115" Count="0" />

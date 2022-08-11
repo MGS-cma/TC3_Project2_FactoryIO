@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="PRG_MAIN" Id="{11a895ac-5a06-4334-87ae-34581a64c27e}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_MAIN
+VAR
+	fb_Blinking : ARRAY [0..1] OF FB_Blinking;
+END_VAR
+
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+
+fb_Blinking[0](Enable:=1 , PT_OFF:= , PT_ON:= , Output=>FIO_Output1[0]);
+fb_Blinking[1](Enable:=1 , PT_OFF:=T#1S, PT_ON:=T#3S, Output=>FIO_Output1[1]);
+
+IF FIO_Input1[2] THEN
+	FIO_Output1[2] := 1;
+ELSE
+	FIO_Output1[2] := 0;
+END_IF
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="PRG_MAIN">
+      <LineId Id="138" Count="1" />
+      <LineId Id="116" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="125" Count="0" />
+      <LineId Id="119" Count="0" />
+      <LineId Id="126" Count="0" />
+      <LineId Id="129" Count="1" />
+      <LineId Id="127" Count="0" />
+      <LineId Id="137" Count="0" />
+      <LineId Id="136" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

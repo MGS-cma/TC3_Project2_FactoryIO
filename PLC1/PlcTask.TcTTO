@@ -2,13 +2,16 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
   <Task Name="PlcTask" Id="{0be175e9-d4a1-46df-9e94-3c49dd853719}">
     <!--CycleTime in micro seconds.-->
-    <CycleTime>10000</CycleTime>
+    <CycleTime>50000</CycleTime>
     <Priority>20</Priority>
     <PouCall>
-      <Name>MAIN</Name>
+      <Name>PRG_FactoryIO_ModbusTCP_Read</Name>
     </PouCall>
     <PouCall>
-      <Name>FactoryIO_ModbusTCP</Name>
+      <Name>PRG_MAIN</Name>
+    </PouCall>
+    <PouCall>
+      <Name>PRG_FactoryIO_ModbusTCP_Write</Name>
     </PouCall>
     <TaskFBGuid>{1af72bab-6965-421d-95ee-8a4c43968c53}</TaskFBGuid>
     <Fb_init>{6cc37c23-a4dd-4458-a82a-f4374e440652}</Fb_init>

@@ -3,6 +3,9 @@
   <GVL Name="GVL_FactoryIO" Id="{a4883462-1cb0-43b2-bb87-d6ce56b75e06}">
     <Declaration><![CDATA[VAR_GLOBAL
 // FIO (FactoryIO)
+	
+
+
 	FIO_Input1: ARRAY [0..15] OF BOOL;
 	FIO_Input2: ARRAY [0..15] OF BOOL;
 	FIO_InputReg: ARRAY [0..7] OF INT;
