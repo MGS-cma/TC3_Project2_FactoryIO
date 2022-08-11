@@ -3,6 +3,7 @@
   <GVL Name="GVL_FactoryIO" Id="{a4883462-1cb0-43b2-bb87-d6ce56b75e06}">
     <Declaration><![CDATA[VAR_GLOBAL
 	
+
 	// FIO (FactoryIO)
 	FIO_Input1: ARRAY [0..15] OF BOOL;
 	FIO_Input2: ARRAY [0..15] OF BOOL;
@@ -13,13 +14,13 @@
 	
 	// Exercice 1 (penser à modifier aussi dans mapping
 	// Entrées
-	FIO_I_BoutonMarche: BOOL;
-	FIO_I_Capteur: BOOL;
-	FIO_I_BoutonAvancer: BOOL;
+	E_BoutonMarche: BOOL;
+	E_Capteur: BOOL;
+	E_BoutonAvancer: BOOL;
 	// Sorties
-	FIO_O_VoyantMarche: BOOL;
-	FIO_O_Convoyeur: BOOL;
-	FIO_O_VoyantAvancer: BOOL;
+	S_VoyantMarche: BOOL;
+	S_Convoyeur: BOOL;
+	S_VoyantAvancer: BOOL;
 	
 END_VAR]]></Declaration>
   </GVL>

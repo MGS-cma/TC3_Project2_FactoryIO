@@ -1,19 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
-  <POU Name="FB_FactoryIO_ModbusTCP" Id="{ef99659b-bb0e-494d-8cf7-6072e7c46a5c}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK PUBLIC FB_FactoryIO_ModbusTCP
+  <POU Name="FB_FactoryIO_ModbusTCP_Read" Id="{ef99659b-bb0e-494d-8cf7-6072e7c46a5c}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK PUBLIC FB_FactoryIO_ModbusTCP_Read
 VAR_INPUT
 	// **** Configuration en fonction de la configuration FactoryIO
 	sIPAddr : STRING[15]:='127.0.0.1'; // '127.0.0.1'
 	nTCPPort : UINT:=505; // 505
-	nUnitID : BYTE:=255; // 255
-	
-	// **** Configuration des array en fonction de la configuration FactoryIO
-	OutputReg : ARRAY [0..7] OF INT;
-	// Outpus traités
-	bOutput1 : ARRAY [0..15] OF BOOL;
-	bOutput2 : ARRAY [0..15] OF BOOL;
-	
+	nUnitID : BYTE:=255; // 255	
 END_VAR
 
 VAR_OUTPUT
@@ -31,20 +24,16 @@ VAR
 	// Instances
 	fb_MBReadInputs : FB_MBReadInputs; // Instance de la fonction FB_MBReadInputs de la lib Tc2_ModbusSrv
 	fb_MBReadInputRegs : FB_MBReadInputRegs;
-	fb_MBWriteCoils : FB_MBWriteCoils;
-	fb_MBWriteRegs : FB_MBWriteRegs ;
 	
 	fb_Word_To_Bool : FB_Word_To_Bool; // Instance commune
 	fb_Bool_To_Word: FB_Bool_To_Word ; // Instance commune
 	
 	// *** Configuration des array en fonction de la configuration FactoryIO
 	Input : ARRAY [0..1] OF WORD; // ex. input digital 16 [0..0] /  input digital 32 [0..1]
-	// **** Configuration des array en fonction de la configuration FactoryIO
-	Output : ARRAY [0..1] OF WORD;
 	
 	// Busy Error interne à la fonciton
-	bBusyInput: ARRAY [1..4] OF BOOL;
-	bErrorInput: ARRAY [1..4] OF BOOL;
+	bBusyInput: ARRAY [1..2] OF BOOL;
+	bErrorInput: ARRAY [1..2] OF BOOL;
 
 END_VAR
 ]]></Declaration>
@@ -55,22 +44,17 @@ fb_Word_To_Bool(inWord := Input[0],
 fb_Word_To_Bool(inWord := Input[1],
 				outArrayOfBool => bInput2);
 				
-// Traitement des bool représentant les outputs
-fb_Bool_To_Word(inArrayOfBool := bOutput1,
-				outWord => Output[0]);
-fb_Bool_To_Word(inArrayOfBool := bOutput2,
-				outWord => Output[1]);	
-				
+			
 
 // Busy si au moins 1 busy
-IF bBusyInput[1] OR bBusyInput[2] OR bBusyInput[3] OR bBusyInput[4] THEN
+IF bBusyInput[1] OR bBusyInput[2] THEN
 	bBusy := 1;
 ELSE
 	bBusy := 0;
 END_IF
 
 // Error si au moins 1 busy
-IF bErrorInput[1] OR bErrorInput[2] OR bErrorInput[3] OR bErrorInput[4] THEN
+IF bErrorInput[1] OR bErrorInput[2] THEN
 	bError := 1;
 ELSE
 	bError := 0;
@@ -78,8 +62,20 @@ END_IF
 
 ]]></ST>
     </Implementation>
-    <Method Name="Read_Input" Id="{114b7d6d-1641-41a1-9a37-c80540c5b291}">
-      <Declaration><![CDATA[METHOD PUBLIC Read_Input
+    <Method Name="MappingInput" Id="{cdba02c1-7fcc-49d0-8394-7d19715afbb4}">
+      <Declaration><![CDATA[METHOD MappingInput
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[// Exercice 1
+E_BoutonMarche := FIO_Input1[0];
+E_Capteur := FIO_Input1[1];
+E_BoutonAvancer := FIO_Input1[2];]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="ReadInput" Id="{114b7d6d-1641-41a1-9a37-c80540c5b291}">
+      <Declaration><![CDATA[METHOD PUBLIC ReadInput
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[fb_MBReadInputs(
@@ -102,8 +98,8 @@ fb_MBReadInputs(bExecute := FALSE);
 ]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Read_InputRegister" Id="{49627f2a-4539-4976-b388-686bcf311a5b}">
-      <Declaration><![CDATA[METHOD PUBLIC Read_InputRegister
+    <Method Name="ReadInputRegister" Id="{49627f2a-4539-4976-b388-686bcf311a5b}">
+      <Declaration><![CDATA[METHOD PUBLIC ReadInputRegister
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[fb_MBReadInputRegs(
@@ -124,61 +120,13 @@ fb_MBReadInputs(bExecute := FALSE);
 fb_MBReadInputRegs(bExecute := FALSE);]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Write_Output" Id="{434578e9-d9ba-4b29-902c-1d1c5a578d51}">
-      <Declaration><![CDATA[METHOD PUBLIC Write_Output
-
-]]></Declaration>
-      <Implementation>
-        <ST><![CDATA[fb_MBWriteCoils(
-	sIPAddr := sIPAddr,
-	nTCPPort := nTCPPort,
-	nUnitID := nUnitID,
-	nQuantity := SIZEOF(Output)*8,
-	nMBAddr := 0,
-	cbLength := SIZEOF(Output),
-	pSrcAddr := ADR(Output),
-	bExecute := TRUE,
-	tTimeout := T#1S,
-	bBusy => bBusyInput[3],
-	bError => bErrorInput[3],
-	nErrId => ,
- );
-fb_MBWriteCoils(bExecute := FALSE);
-]]></ST>
-      </Implementation>
-    </Method>
-    <Method Name="Write_OutputRegister" Id="{7e2de503-8972-44d8-bb85-cbb1ce981c07}">
-      <Declaration><![CDATA[METHOD PUBLIC Write_OutputRegister
-]]></Declaration>
-      <Implementation>
-        <ST><![CDATA[fb_MBWriteRegs(
-	sIPAddr := sIPAddr,
-	nTCPPort := nTCPPort,
-	nUnitID := nUnitID,
-	nQuantity := SIZEOF(OutputReg)/2,
-	nMBAddr := 0,
-	cbLength := SIZEOF(OutputReg),
-	pSrcAddr := ADR(InputReg),
-	bExecute := TRUE,
-	tTimeout := T#1S,
-	bBusy => bBusyInput[4],
-	bError => bErrorInput[4],
-	nErrId => ,
- );
-fb_MBWriteRegs(bExecute := FALSE);
-]]></ST>
-      </Implementation>
-    </Method>
-    <LineIds Name="FB_FactoryIO_ModbusTCP">
+    <LineIds Name="FB_FactoryIO_ModbusTCP_Read">
       <LineId Id="123" Count="0" />
       <LineId Id="110" Count="0" />
       <LineId Id="115" Count="0" />
       <LineId Id="122" Count="0" />
       <LineId Id="114" Count="0" />
-      <LineId Id="152" Count="1" />
-      <LineId Id="156" Count="0" />
-      <LineId Id="159" Count="1" />
-      <LineId Id="158" Count="0" />
+      <LineId Id="152" Count="0" />
       <LineId Id="155" Count="0" />
       <LineId Id="124" Count="0" />
       <LineId Id="78" Count="0" />
@@ -192,26 +140,18 @@ fb_MBWriteRegs(bExecute := FALSE);
       <LineId Id="69" Count="0" />
       <LineId Id="68" Count="0" />
     </LineIds>
-    <LineIds Name="FB_FactoryIO_ModbusTCP.Read_Input">
+    <LineIds Name="FB_FactoryIO_ModbusTCP_Read.MappingInput">
+      <LineId Id="6" Count="2" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_FactoryIO_ModbusTCP_Read.ReadInput">
       <LineId Id="53" Count="15" />
       <LineId Id="48" Count="0" />
       <LineId Id="46" Count="0" />
     </LineIds>
-    <LineIds Name="FB_FactoryIO_ModbusTCP.Read_InputRegister">
+    <LineIds Name="FB_FactoryIO_ModbusTCP_Read.ReadInputRegister">
       <LineId Id="23" Count="14" />
       <LineId Id="22" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_FactoryIO_ModbusTCP.Write_Output">
-      <LineId Id="6" Count="12" />
-      <LineId Id="20" Count="0" />
-      <LineId Id="5" Count="0" />
-      <LineId Id="21" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_FactoryIO_ModbusTCP.Write_OutputRegister">
-      <LineId Id="6" Count="12" />
-      <LineId Id="20" Count="0" />
-      <LineId Id="5" Count="0" />
-      <LineId Id="21" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

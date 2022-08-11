@@ -35,13 +35,10 @@
     <Compile Include="POUs\FactoryIO_MGS\FB_Exercice1.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FactoryIO_MGS\FB_FactoryIO_ModbusTCP.TcPOU">
+    <Compile Include="POUs\FactoryIO_MGS\FB_FactoryIO_ModbusTCP_Read.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FactoryIO_MGS\FB_MappingInputs.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\FactoryIO_MGS\FB_MappingOutputs.TcPOU">
+    <Compile Include="POUs\FactoryIO_MGS\FB_FactoryIO_ModbusTCP_Write.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\FactoryIO_MGS\GVL_FactoryIO.TcGVL">
