@@ -32,7 +32,16 @@
     <Compile Include="POUs\FactoryIO_MGS\BasicDep\FB_Word_To_Bool.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\FactoryIO_MGS\FB_Exercice1.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\FactoryIO_MGS\FB_FactoryIO_ModbusTCP.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\FactoryIO_MGS\FB_MappingInputs.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\FactoryIO_MGS\FB_MappingOutputs.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\FactoryIO_MGS\GVL_FactoryIO.TcGVL">

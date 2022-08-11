@@ -4,24 +4,29 @@
     <Declaration><![CDATA[PROGRAM PRG_MAIN
 VAR
 	fb_Blinking : ARRAY [0..1] OF FB_Blinking;
+	fb_Exercice1: FB_Exercice1;
 END_VAR
 
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
+fb_Exercice1();
 
-fb_Blinking[0](Enable:=1 , PT_OFF:= , PT_ON:= , Output=>FIO_Output1[0]);
-fb_Blinking[1](Enable:=1 , PT_OFF:=T#1S, PT_ON:=T#3S, Output=>FIO_Output1[1]);
+//fb_Blinking[0](Enable:=1 , PT_OFF:= , PT_ON:= , Output=>FIO_Output1[0]);
+////fb_Blinking[1](Enable:=1 , PT_OFF:=T#1S, PT_ON:=T#3S, Output=>FIO_Output1[1]);
 
-IF FIO_Input1[2] THEN
-	FIO_Output1[2] := 1;
-ELSE
-	FIO_Output1[2] := 0;
-END_IF
+//IF FIO_I_Capteur THEN
+//	FIO_O_Convoyeur := 1;
+//ELSE
+//	FIO_O_Convoyeur := 0;
+//END_IF
+
+
 
 ]]></ST>
     </Implementation>
     <LineIds Name="PRG_MAIN">
+      <LineId Id="148" Count="0" />
       <LineId Id="138" Count="1" />
       <LineId Id="116" Count="0" />
       <LineId Id="21" Count="0" />
@@ -30,6 +35,8 @@ END_IF
       <LineId Id="126" Count="0" />
       <LineId Id="129" Count="1" />
       <LineId Id="127" Count="0" />
+      <LineId Id="141" Count="0" />
+      <LineId Id="140" Count="0" />
       <LineId Id="137" Count="0" />
       <LineId Id="136" Count="0" />
     </LineIds>

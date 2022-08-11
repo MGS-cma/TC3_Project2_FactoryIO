@@ -2,10 +2,8 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
   <GVL Name="GVL_FactoryIO" Id="{a4883462-1cb0-43b2-bb87-d6ce56b75e06}">
     <Declaration><![CDATA[VAR_GLOBAL
-// FIO (FactoryIO)
 	
-
-
+	// FIO (FactoryIO)
 	FIO_Input1: ARRAY [0..15] OF BOOL;
 	FIO_Input2: ARRAY [0..15] OF BOOL;
 	FIO_InputReg: ARRAY [0..7] OF INT;
@@ -13,9 +11,16 @@
 	FIO_Output2: ARRAY [0..15] OF BOOL;
 	FIO_OutputReg: ARRAY [0..7] OF INT;
 	
-	test: INT;
+	// Exercice 1 (penser à modifier aussi dans mapping
+	// Entrées
+	FIO_I_BoutonMarche: BOOL;
+	FIO_I_Capteur: BOOL;
+	FIO_I_BoutonAvancer: BOOL;
+	// Sorties
+	FIO_O_VoyantMarche: BOOL;
+	FIO_O_Convoyeur: BOOL;
+	FIO_O_VoyantAvancer: BOOL;
 	
-	bOutput1: INT;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
