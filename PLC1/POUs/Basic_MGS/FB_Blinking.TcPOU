@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="FB_Blinking" Id="{3f88fc31-be12-435b-862e-b7a83eff5280}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK PUBLIC FB_Blinking
+VAR_INPUT
+	Enable: BOOL;
+	PT_OFF: TIME :=T#0.7S;
+	PT_ON: TIME := T#1S;
+END_VAR
+VAR_OUTPUT
+	Output: BOOL;
+END_VAR
+VAR
+	TON1_OFF: TON;
+	TON2_ON: TON;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[	
+IF Enable THEN
+	TON1_OFF(IN:= , PT:=PT_OFF , Q=> , ET=> );
+	TON2_ON(IN:= , PT:=PT_ON , Q=> , ET=> );
+	
+	TON1_OFF.IN := NOT TON2_ON.Q;
+	TON2_ON.IN := TON1_OFF.Q;
+	
+	IF TON1_OFF.Q THEN
+		Output := 1;
+	ELSE
+		Output := 0;
+	END_IF	
+END_IF
+]]></ST>
+    </Implementation>
+    <LineIds Name="FB_Blinking">
+      <LineId Id="10" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="33" Count="9" />
+      <LineId Id="31" Count="1" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

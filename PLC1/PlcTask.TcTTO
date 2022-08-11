@@ -7,6 +7,9 @@
     <PouCall>
       <Name>MAIN</Name>
     </PouCall>
+    <PouCall>
+      <Name>FactoryIO_ModbusTCP</Name>
+    </PouCall>
     <TaskFBGuid>{1af72bab-6965-421d-95ee-8a4c43968c53}</TaskFBGuid>
     <Fb_init>{6cc37c23-a4dd-4458-a82a-f4374e440652}</Fb_init>
     <Fb_exit>{8c85ffb5-9884-4217-9100-b28966453a84}</Fb_exit>

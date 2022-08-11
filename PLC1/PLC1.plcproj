@@ -17,11 +17,10 @@
     <LibraryReferences>{c5157be6-39c3-4e77-b92e-0435a00f9ef9}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="GVLs\GVL_FactoryIO.TcGVL">
-      <SubType>Code</SubType>
-      <LinkAlways>true</LinkAlways>
-    </Compile>
     <Compile Include="PlcTask.TcTTO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Basic_MGS\FB_Blinking.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\ClassDiagram.TcCD">
@@ -39,6 +38,10 @@
     <Compile Include="POUs\FactoryIO_MGS\FB_FactoryIO_ModbusTCP.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\FactoryIO_MGS\GVL_FactoryIO.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
     <Compile Include="POUs\FactoryIO_WebSample\F_FactoryIO_Read_InputRegs.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -50,6 +53,10 @@
     </Compile>
     <Compile Include="POUs\FactoryIO_WebSample\F_FactoryIO_Write_Coils.TcPOU">
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\FactoryIO_WebSample\GVL_FactoryIO_WebSample.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
     </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
